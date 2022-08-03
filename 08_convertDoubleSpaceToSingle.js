@@ -5,7 +5,8 @@
 //1. 띄어쓰기 2개를 하나로 줄인다
 //2. 배열을 스트링으로 모아주기
 function convertDoubleSpaceToSingle(str) {
-    let result = str.split(" ").join(" ");
+    let result = str.split("   ").join(" ");
+    console.log(result);
     return result;
   }
   
