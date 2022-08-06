@@ -15,6 +15,7 @@
 
 function ABCheck(str) {
   let findAB = str.toLowerCase();
+  console.log(findAB);
 
   for(let i = 0; i<findAB.length; i++) {
     if (findAB[i] === "a" && findAB[i+4] === "b" || findAB[i] === "b" && findAB[i+4] === "a"){
