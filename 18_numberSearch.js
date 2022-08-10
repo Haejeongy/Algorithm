@@ -10,26 +10,25 @@
 
 function numberSearch(str) {
   let newNum = str.replace(/[^0-9]/g ,"");
+  let newString = str.replace(/[^a-z]/gi ,"");
+  console.log(newNum);
   let sum = 0;
   let result = 0;
-    console.log(typeof(newNum));
+    console.log(newString);
 
   for(let i=0; i<newNum.length; i++) {
     sum = sum+Number(newNum[i]);
     console.log(sum);
   }
-  if(sum % str.length === 0) {
-    result = sum/str.length
+  if(sum > 0) {
+    result = sum/newString.length;
     console.log(result);
-} else {
-    result = sum/str.length;
 }
-
-return Math.floor(result);
+return Math.round(result);
 
 }
 
-output = numberSearch("8ad");
-console.log(output); // --> 2
+output = numberSearch( "Sou2bgPJkS7Lp5r2j6jeWOts8X");
+console.log(output); // 
 
 //스트링은 str[i]가 가능하지만 number type 은 불가능
