@@ -1,27 +1,24 @@
 //다차원 배열을 입력받아 1차원 배열로 변환하여 리턴해야 합니다.
 
 //수도코드
-//스프레드로 배열을 계속 푸는데
-//빈배열이 되면 빈배열로 리턴을 해주고,
-//head가 배열이라면, 풀어서 재귀를 돌리고-> flattenArr([...head, ...tail])
-//head가 배열이 아니라면, 배열을 씌워서 concat으로 나머지 tail을 붙여준다.
+//결과값을 할당 할 빈배열을 하나 선언해주고,
+//반복문을 돌면서 첫번째 요소가 배열이면 재귀함수에 첫번째 요소를 넣어서 
+// 풀어서 푸쉬로 넣어주고
+// 아니며 그냥 푸쉬해준다
 
 function flattenArr(arr) {
-    if(arr.length === 0) {return []}
-
-    const head = arr[0]
-    const tail = arr.slice(1)
-
-    if(Array.isArray(head)) {
-        return flattenArr([...head, ...tail])
-    }else {
-        return [head].concat(flattenArr(tail));
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      const flattend = flattenArr(arr[i]);
+      console.log(flattend)
+      result.push(...flattend);
+    } else {
+      result.push(arr[i]);
     }
-
   }
-  
+  return result;
+}
 
-
-
-  let output = flattenArr([[1], 2, [3, 4], 5]);
+let output = flattenArr([[1], 2, [3, 4], 5]);
 console.log(output); // --> [1, 2, 3, 4, 5]
