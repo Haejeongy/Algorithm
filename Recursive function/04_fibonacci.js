@@ -18,8 +18,6 @@ console.log(output); // --> 5
 output = fibonacci(9);
 console.log(output); // --> 34
 
-fibonacci(0)=0
-fibonacci(1)=1
-fibonacci(2)=fibonacci(0)+fibonacci(1)
+
 
 
